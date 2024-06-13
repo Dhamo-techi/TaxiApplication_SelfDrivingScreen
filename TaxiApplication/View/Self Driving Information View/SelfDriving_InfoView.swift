@@ -385,7 +385,7 @@ class SelfDriving_InfoView: UIView {
         viewSelectHome_Checkbox.addSubview(imgHomeViewCheck)
         
         lblviewSelectHome_CheckboxTitle.translatesAutoresizingMaskIntoConstraints = false
-        lblviewSelectHome_CheckboxTitle.text = "Garage Pickup"
+        lblviewSelectHome_CheckboxTitle.text = "Home Delivery"
         lblviewSelectHome_CheckboxTitle.numberOfLines = 0
         lblviewSelectHome_CheckboxTitle.textAlignment = .left
         lblviewSelectHome_CheckboxTitle.textColor = .black
