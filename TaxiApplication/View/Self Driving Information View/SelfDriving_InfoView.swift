@@ -68,8 +68,8 @@ class SelfDriving_InfoView: UIView {
 
     var viewDummyForHeight = UIView()
 
-    var viewBidBtn = UIView()
-    var btnBid = UIButton()
+    var viewSubmitBtn = UIView()
+    var btnSubmit = UIButton()
     
     
     override init(frame: CGRect) {
@@ -402,22 +402,22 @@ class SelfDriving_InfoView: UIView {
         ModelStackView.addArrangedSubview(viewDummyForHeight)
         
         
-        viewBidBtn.translatesAutoresizingMaskIntoConstraints = false
-        layoutDict["viewBidBtn"] = viewBidBtn
-        viewBidBtn.backgroundColor = .white
-        viewContent.addSubview(viewBidBtn)
+        viewSubmitBtn.translatesAutoresizingMaskIntoConstraints = false
+        layoutDict["viewSubmitBtn"] = viewSubmitBtn
+        viewSubmitBtn.backgroundColor = .white
+        viewContent.addSubview(viewSubmitBtn)
         
-        btnBid.translatesAutoresizingMaskIntoConstraints = false
-        btnBid.setTitle("SUBMIT", for: .normal)
-        btnBid.setTitleColor(UIColor(red: 255/255, green: 209/255, blue: 0/255, alpha: 1.0), for: .normal)
-        btnBid.layer.cornerRadius =  5
-        btnBid.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        btnBid.backgroundColor =  UIColor(red: 4/255, green: 64/255, blue: 12/255, alpha: 1.0)
-        layoutDict["btnBid"] = btnBid
-        viewBidBtn.addSubview(btnBid)
+        btnSubmit.translatesAutoresizingMaskIntoConstraints = false
+        btnSubmit.setTitle("SUBMIT", for: .normal)
+        btnSubmit.setTitleColor(UIColor(red: 255/255, green: 209/255, blue: 0/255, alpha: 1.0), for: .normal)
+        btnSubmit.layer.cornerRadius =  5
+        btnSubmit.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        btnSubmit.backgroundColor =  UIColor(red: 4/255, green: 64/255, blue: 12/255, alpha: 1.0)
+        layoutDict["btnSubmit"] = btnSubmit
+        viewSubmitBtn.addSubview(btnSubmit)
         
         
-        
+       //--------> viewContent
         viewContent.topAnchor.constraint(equalTo: baseView.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         viewContent.bottomAnchor.constraint(equalTo: baseView.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         baseView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[viewContent]|", options: [], metrics: nil, views: layoutDict))
@@ -431,7 +431,8 @@ class SelfDriving_InfoView: UIView {
         viewBack_title.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[btnBack(40)]", options: [], metrics: nil, views: layoutDict))
         
         
-        
+        //--------> scrollView
+
         scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[viewSelfDriving_infoContent]|", options: [], metrics: nil, views: layoutDict))
         scrollView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[viewSelfDriving_infoContent]|", options: [], metrics: nil, views: layoutDict))
         contentStackView.widthAnchor.constraint(equalTo: viewContent.widthAnchor).isActive = true
@@ -440,42 +441,49 @@ class SelfDriving_InfoView: UIView {
         containerHgt.isActive = true
         
         
-        
+        //--------> Self Driving information content holding View
+
         viewSelfDriving_infoContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblTitle]-20-[contentStackView]|", options: [], metrics: nil, views: layoutDict))
         viewSelfDriving_infoContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblTitle]|", options: [], metrics: nil, views: layoutDict))
         viewSelfDriving_infoContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[contentStackView]|", options: [], metrics: nil, views: layoutDict))
         
+        //--------> Select Category
         viewSelectCategory.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblSelectCategoryTitle]-10-[stackEv_nonEv(50)]|", options: [], metrics: nil, views: layoutDict))
         viewSelectCategory.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblSelectCategoryTitle]-10-|", options: [], metrics: nil, views: layoutDict))
         viewSelectCategory.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[stackEv_nonEv]-10-|", options: [], metrics: nil, views: layoutDict))
         
+        //--------> select Vehicle Type
         viewSelectVehicle_Type.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblSelectVehicle_TypeTitle]-10-[VechicleTypeCollectionView(120)]|", options: [], metrics: nil, views: layoutDict))
         viewSelectVehicle_Type.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblSelectVehicle_TypeTitle]-10-|", options: [], metrics: nil, views: layoutDict))
         viewSelectVehicle_Type.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[VechicleTypeCollectionView]-10-|", options: [], metrics: nil, views: layoutDict))
         
+        //--------> slect Vehicle Hint Brand
         viewSelectVehicle_Hint.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblSelectVehicle_HintTitle]-10-[VechicleHintCollectionView(110)]|", options: [], metrics: nil, views: layoutDict))
         viewSelectVehicle_Hint.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblSelectVehicle_HintTitle]-10-|", options: [], metrics: nil, views: layoutDict))
         viewSelectVehicle_Hint.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[VechicleHintCollectionView]-10-|", options: [], metrics: nil, views: layoutDict))
 
         
-        
+        //--------> select Vehicle Model
         viewVechicleModel.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblVechicleModel]-10-[txtSelect_VehicleModel(60)]|", options: [], metrics: nil, views: layoutDict))
         viewVechicleModel.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblVechicleModel]-10-|", options: [], metrics: nil, views: layoutDict))
         viewVechicleModel.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[txtSelect_VehicleModel]-10-|", options: [], metrics: nil, views: layoutDict))
         
+        //--------> select Vehicle Manufacture Year
         viewVechicleManufactureYear.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblVechicleManufactureYear]-10-[txtSelect_VehicleManufactureYear(60)]|", options: [], metrics: nil, views: layoutDict))
         viewVechicleManufactureYear.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblVechicleManufactureYear]-10-|", options: [], metrics: nil, views: layoutDict))
         viewVechicleManufactureYear.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[txtSelect_VehicleManufactureYear]-10-|", options: [], metrics: nil, views: layoutDict))
          
+        //--------> Textfield or Enter Vehicle Number
         viewVechicleNumber.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblVechicleNumber]-10-[txtSelect_VehicleNumber(60)]|", options: [], metrics: nil, views: layoutDict))
         viewVechicleNumber.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblVechicleNumber]-10-|", options: [], metrics: nil, views: layoutDict))
         viewVechicleNumber.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[txtSelect_VehicleNumber]-10-|", options: [], metrics: nil, views: layoutDict))
         
-        
+        //--------> select Home Delivery or Garage pickup
         viewSelectHome_Garage.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblSelectHome_GarageTitle]-10-[stackHome_Garage(50)]|", options: [], metrics: nil, views: layoutDict))
         viewSelectHome_Garage.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblSelectHome_GarageTitle]-10-|", options: [], metrics: nil, views: layoutDict))
         viewSelectHome_Garage.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[stackHome_Garage]-10-|", options: [], metrics: nil, views: layoutDict))
         
+        //--------> select Garage Pickup
         viewSelectGarage_Checkbox.centerYAnchor.constraint(equalTo: viewSelectGarage_Pickup.centerYAnchor, constant: 0).isActive = true
         viewSelectGarage_Checkbox.heightAnchor.constraint(equalToConstant: 20).isActive = true
         lblviewSelectGarage_CheckboxTitle.centerYAnchor.constraint(equalTo: viewSelectGarage_Pickup.centerYAnchor, constant: 0).isActive = true
@@ -487,7 +495,7 @@ class SelfDriving_InfoView: UIView {
         viewSelectGarage_Pickup.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[btnGaragePickupCheckbox]|", options: [], metrics: nil, views: layoutDict))
         viewSelectGarage_Pickup.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[btnGaragePickupCheckbox]|", options: [], metrics: nil, views: layoutDict))
         
-        
+        //--------> select Home Delivery
         viewSelectHome_Checkbox.centerYAnchor.constraint(equalTo: viewSelectHome_delivery.centerYAnchor, constant: 0).isActive = true
         viewSelectHome_Checkbox.heightAnchor.constraint(equalToConstant: 20).isActive = true
         lblviewSelectHome_CheckboxTitle.centerYAnchor.constraint(equalTo: viewSelectHome_delivery.centerYAnchor, constant: 0).isActive = true
@@ -499,18 +507,18 @@ class SelfDriving_InfoView: UIView {
         viewSelectHome_delivery.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[btnHomePickupCheckbox]|", options: [], metrics: nil, views: layoutDict))
         viewSelectHome_delivery.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[btnHomePickupCheckbox]|", options: [], metrics: nil, views: layoutDict))
         
-        
+        //--------> Dummy View for ScrollView Height
         viewDummyForHeight.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
-        
-        viewBidBtn.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        viewBidBtn.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor, constant: 0).isActive = true
-        viewContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[viewBidBtn]|", options: [], metrics: nil, views: layoutDict))
+        //--------> Button for Submit
+        viewSubmitBtn.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        viewSubmitBtn.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor, constant: 0).isActive = true
+        viewContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[viewSubmitBtn]|", options: [], metrics: nil, views: layoutDict))
 
-        btnBid.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        btnBid.centerYAnchor.constraint(equalTo: viewBidBtn.centerYAnchor, constant: 0).isActive = true
-        btnBid.centerXAnchor.constraint(equalTo: viewBidBtn.centerXAnchor, constant: 0).isActive = true
-        viewBidBtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[btnBid]-10-|", options: [], metrics: nil, views: layoutDict))
+        btnSubmit.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        btnSubmit.centerYAnchor.constraint(equalTo: viewSubmitBtn.centerYAnchor, constant: 0).isActive = true
+        btnSubmit.centerXAnchor.constraint(equalTo: viewSubmitBtn.centerXAnchor, constant: 0).isActive = true
+        viewSubmitBtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[btnSubmit]-10-|", options: [], metrics: nil, views: layoutDict))
         
         
         viewContent.layoutIfNeeded()
