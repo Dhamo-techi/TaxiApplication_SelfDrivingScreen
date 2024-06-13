@@ -224,7 +224,7 @@ class SelfDriving_InfoView: UIView {
         viewSelectVehicle_Hint.addSubview(VechicleHintCollectionView)
 
         
-        //----View that appear after select the Type and Hint
+        //------>View that appear after select the Type and Hint
         
         ModelStackView.translatesAutoresizingMaskIntoConstraints = false
         ModelStackView.alignment = .fill
