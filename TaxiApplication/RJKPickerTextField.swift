@@ -168,11 +168,15 @@ extension UITextField {
         btn.addTarget(self, action: #selector(btnPressed(_ :)), for: .touchUpInside)
         btn.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         
+        let rightViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: self.frame.size.height))
+        btn.center = rightViewContainer.center
+        rightViewContainer.addSubview(btn)
+        
         leftViewMode = .always
         leftView = view
         
         rightViewMode = .always
-        rightView = btn
+        rightView = rightViewContainer
     }
     @objc func btnPressed(_ sender: UIButton) {
         self.becomeFirstResponder()
@@ -190,7 +194,7 @@ extension UITextField {
         self.layer.borderWidth = 1
         
         let leftViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: self.frame.size.height))
-        let imgView = UIImageView(image: UIImage(named: text))
+        let imgView = UIImageView()
         imgView.frame = CGRect(x: 10, y: 0, width: 50, height: 50)
         imgView.image = UIImage(named: carimage)
         imgView.layer.cornerRadius = 25

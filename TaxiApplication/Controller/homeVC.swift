@@ -31,8 +31,8 @@ class homeVC: UIViewController {
     func addTarget(){
         
         homeView.btnLocalCar.addTarget(self, action: #selector(btnLocalCarTapped(_:)), for: .touchUpInside)
-        
         homeView.btnOutstationCar.addTarget(self, action: #selector(btnOutstationCarTapped(_:)), for: .touchUpInside)
+        homeView.btnSelfDrivingCar.addTarget(self, action: #selector(btnSelfVehicleCarTapped(_:)), for: .touchUpInside)
 
     }
     
@@ -44,6 +44,11 @@ class homeVC: UIViewController {
     
     @objc func btnOutstationCarTapped(_ sender: UIButton) {
         let vc = OutstationsVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func btnSelfVehicleCarTapped(_ sender: UIButton) {
+        let vc = SelfDriving_infoVC()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

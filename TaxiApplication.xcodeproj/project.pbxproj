@@ -21,6 +21,9 @@
 		0588666E2C170DBC00979931 /* TaxiApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588666D2C170DBC00979931 /* TaxiApplicationUITests.swift */; };
 		0588668C2C170E9800979931 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588668B2C170E9800979931 /* HomeView.swift */; };
 		058866972C170EB400979931 /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058866962C170EB400979931 /* homeVC.swift */; };
+		05B3D93A2C1AB432004A8041 /* SelfDriving_InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3D9392C1AB432004A8041 /* SelfDriving_InfoView.swift */; };
+		05B3D93F2C1AB451004A8041 /* SelfDriving_infoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3D93E2C1AB451004A8041 /* SelfDriving_infoVC.swift */; };
+		05B3D9452C1AD4C8004A8041 /* ServiceTypesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B3D9442C1AD4C8004A8041 /* ServiceTypesCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		0588666F2C170DBC00979931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0588668B2C170E9800979931 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		058866962C170EB400979931 /* homeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
+		05B3D9392C1AB432004A8041 /* SelfDriving_InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDriving_InfoView.swift; sourceTree = "<group>"; };
+		05B3D93E2C1AB451004A8041 /* SelfDriving_infoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDriving_infoVC.swift; sourceTree = "<group>"; };
+		05B3D9442C1AD4C8004A8041 /* ServiceTypesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTypesCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				058866962C170EB400979931 /* homeVC.swift */,
+				05B3D9372C1AB354004A8041 /* Self Driving Information */,
 				053BEF702C171F8C000FA747 /* Local Car Controller */,
 				053BEF8C2C196332000FA747 /* OutStations VC */,
 			);
@@ -196,10 +203,36 @@
 			isa = PBXGroup;
 			children = (
 				0588668B2C170E9800979931 /* HomeView.swift */,
+				05B3D9382C1AB365004A8041 /* Self Driving Information View */,
 				053BEF672C171F56000FA747 /* Local Cars View */,
 				053BEF8D2C196350000FA747 /* OutStations */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		05B3D9372C1AB354004A8041 /* Self Driving Information */ = {
+			isa = PBXGroup;
+			children = (
+				05B3D93E2C1AB451004A8041 /* SelfDriving_infoVC.swift */,
+			);
+			path = "Self Driving Information";
+			sourceTree = "<group>";
+		};
+		05B3D9382C1AB365004A8041 /* Self Driving Information View */ = {
+			isa = PBXGroup;
+			children = (
+				05B3D9392C1AB432004A8041 /* SelfDriving_InfoView.swift */,
+				05B3D9432C1AD49D004A8041 /* ServiceTypeCell */,
+			);
+			path = "Self Driving Information View";
+			sourceTree = "<group>";
+		};
+		05B3D9432C1AD49D004A8041 /* ServiceTypeCell */ = {
+			isa = PBXGroup;
+			children = (
+				05B3D9442C1AD4C8004A8041 /* ServiceTypesCollectionCell.swift */,
+			);
+			path = ServiceTypeCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,9 +364,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05B3D9452C1AD4C8004A8041 /* ServiceTypesCollectionCell.swift in Sources */,
+				05B3D93A2C1AB432004A8041 /* SelfDriving_InfoView.swift in Sources */,
 				0588664C2C170DAE00979931 /* AppDelegate.swift in Sources */,
 				058866972C170EB400979931 /* homeVC.swift in Sources */,
 				053BEF972C196486000FA747 /* OutstationsVC.swift in Sources */,
+				05B3D93F2C1AB451004A8041 /* SelfDriving_infoVC.swift in Sources */,
 				053BEFA42C1981DA000FA747 /* RJKPickerTextField.swift in Sources */,
 				053BEF7D2C182EDE000FA747 /* VehicleCategoryCollectionViewCell.swift in Sources */,
 				0588668C2C170E9800979931 /* HomeView.swift in Sources */,

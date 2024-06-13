@@ -35,6 +35,11 @@ class HomeView: UIView {
     
     var btnOutstationCar = UIButton()
 
+    var viewSelfDrivingnbtn = UIView()
+    var imgvwSelfDrivingCar = UIImageView()
+    var lblSelfDrivingCar = UILabel()
+    var btnSelfDrivingCar = UIButton()
+    
     
     
     override init(frame: CGRect) {
@@ -123,6 +128,32 @@ class HomeView: UIView {
         btnOutstationCar.translatesAutoresizingMaskIntoConstraints = false
         layoutdict["btnOutstationCar"] = btnOutstationCar
         viewOutstationbtn.addSubview(btnOutstationCar)
+        
+        
+        viewSelfDrivingnbtn.translatesAutoresizingMaskIntoConstraints = false
+        layoutdict["viewSelfDrivingnbtn"] = viewSelfDrivingnbtn
+        viewType.addSubview(viewSelfDrivingnbtn)
+        
+        imgvwSelfDrivingCar.translatesAutoresizingMaskIntoConstraints = false
+        imgvwSelfDrivingCar.image = UIImage(named: "Outstation")
+        imgvwSelfDrivingCar.contentMode = .scaleAspectFit
+        imgvwSelfDrivingCar.layer.cornerRadius = 12
+        imgvwSelfDrivingCar.layer.masksToBounds = true
+        layoutdict["imgvwSelfDrivingCar"] = imgvwSelfDrivingCar
+        viewSelfDrivingnbtn.addSubview(imgvwSelfDrivingCar)
+        
+        lblSelfDrivingCar.translatesAutoresizingMaskIntoConstraints = false
+        lblSelfDrivingCar.text = "Self Driving"
+        lblSelfDrivingCar.textAlignment = .center
+        lblSelfDrivingCar.numberOfLines = 0
+        lblSelfDrivingCar.textColor = .black
+        lblSelfDrivingCar.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        layoutdict["lblSelfDrivingCar"] = lblSelfDrivingCar
+        viewSelfDrivingnbtn.addSubview(lblSelfDrivingCar)
+        
+        btnSelfDrivingCar.translatesAutoresizingMaskIntoConstraints = false
+        layoutdict["btnSelfDrivingCar"] = btnSelfDrivingCar
+        viewSelfDrivingnbtn.addSubview(btnSelfDrivingCar)
 
     
         viewContent.topAnchor.constraint(equalTo: baseView.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
@@ -136,10 +167,11 @@ class HomeView: UIView {
 
         //View Type
         
-        viewType.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[lblCarType]-10-[stackviewBtn(100)]-10-|", options: [], metrics: nil, views: layoutdict))
+        viewType.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[lblCarType]-10-[stackviewBtn(100)]-10-[viewSelfDrivingnbtn]|", options: [], metrics: nil, views: layoutdict))
 
         viewType.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[lblCarType]|", options: [], metrics: nil, views: layoutdict))
         viewType.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-50-[stackviewBtn]-50-|", options: [], metrics: nil, views: layoutdict))
+        viewType.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-100-[viewSelfDrivingnbtn]-100-|", options: [], metrics: nil, views: layoutdict))
         
         
         //local cars
@@ -162,6 +194,16 @@ class HomeView: UIView {
         
         viewOutstationbtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[btnOutstationCar]|", options: [], metrics: nil, views: layoutdict))
         viewOutstationbtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[btnOutstationCar]|", options: [], metrics: nil, views: layoutdict))
+        btnOutstationCar.bringSubviewToFront(viewOutstationbtn)
+        
+        
+        viewSelfDrivingnbtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[imgvwSelfDrivingCar]-10-[lblSelfDrivingCar(20)]|", options: [], metrics: nil, views: layoutdict))
+
+        viewSelfDrivingnbtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[imgvwSelfDrivingCar]|", options: [], metrics: nil, views: layoutdict))
+        viewSelfDrivingnbtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblSelfDrivingCar]|", options: [], metrics: nil, views: layoutdict))
+        
+        viewSelfDrivingnbtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[btnSelfDrivingCar]|", options: [], metrics: nil, views: layoutdict))
+        viewSelfDrivingnbtn.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[btnSelfDrivingCar]|", options: [], metrics: nil, views: layoutdict))
         btnOutstationCar.bringSubviewToFront(viewOutstationbtn)
     }
 
