@@ -245,6 +245,8 @@ class LocalCarView: UIView {
         stackviewSelectHome_GarageBtn.alignment = .fill
         stackviewSelectHome_GarageBtn.distribution = .fillEqually
         stackviewSelectHome_GarageBtn.spacing = 0
+        stackviewSelectHome_GarageBtn.layer.cornerRadius = 8.0
+
         stackviewSelectHome_GarageBtn.backgroundColor = .white
         layoutDict["stackviewSelectHome_GarageBtn"] = stackviewSelectHome_GarageBtn
         viewBackground_SelectHomeDeliverBtn.addSubview(stackviewSelectHome_GarageBtn)
@@ -454,7 +456,6 @@ class LocalCarView: UIView {
         viewVechicleModel.addSubview(viewSelect_VechicleModel)
         
         txtSelect_VehicleModel.addDropDownSelectCarModel(text: "Suv", image: "dropdown", carimage: "1")
-//        addDropDown(text: "2000", image: "dropdown")
         txtSelect_VehicleModel.changeTextFieldType(.pickerView)
         txtSelect_VehicleModel.translatesAutoresizingMaskIntoConstraints = false
         txtSelect_VehicleModel.placeholder = "Select the vehicle model"
