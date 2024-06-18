@@ -552,7 +552,7 @@ class VehicleInformationView: UIView {
         EV_NonEVStackView.addArrangedSubview(btnEV)
         
         btnNonEV.translatesAutoresizingMaskIntoConstraints = false
-        btnNonEV.setTitle("Station", for: .normal)
+        btnNonEV.setTitle("Non-EV", for: .normal)
         btnNonEV.setTitleColor(UIColor(red: 4/255, green: 64/255, blue: 12/255, alpha: 1.0), for: .normal)
         btnNonEV.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         btnNonEV.backgroundColor = .none
