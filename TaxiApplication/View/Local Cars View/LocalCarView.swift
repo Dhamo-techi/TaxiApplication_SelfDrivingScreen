@@ -28,8 +28,6 @@ class LocalCarView: UIView {
         
     var viewLocalContent = UIView()
     var lblLocalTitle = UILabel()
-    
-    
 
     var viewSelectPackage = UIView()
     var lblSelectPackageTitle = UILabel()
@@ -640,7 +638,6 @@ class LocalCarView: UIView {
         viewEnter_ManufactureYear.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[txtManufactureYear]|", options: [], metrics: nil, views: layoutDict))
         
         
-        viewDummyForHeight.heightAnchor.constraint(equalToConstant: 60).isActive = true
 
         
         viewBidBtn.heightAnchor.constraint(equalToConstant: 60).isActive = true
