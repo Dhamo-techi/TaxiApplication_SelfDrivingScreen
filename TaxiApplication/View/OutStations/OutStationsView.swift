@@ -56,6 +56,7 @@ class OutStationsView: UIView {
     var btnGaragePickupCar = UIButton()
     var viewSelectHomeAddress = UIView()
     var lblEnterHomeAddress = UILabel()
+    
     let locationView = UIView()
     let locationColor = UIView()
     let lblLocation = UILabel()
@@ -350,6 +351,7 @@ class OutStationsView: UIView {
         
         viewSelectHomeAddress.translatesAutoresizingMaskIntoConstraints = false
         viewSelectHomeAddress.backgroundColor = .white
+        viewSelectHomeAddress.isHidden = true
         layoutDict["viewSelectHomeAddress"] = viewSelectHomeAddress
         stackviewHomeDeliveryBtn_Address.addArrangedSubview(viewSelectHomeAddress)
         
@@ -369,7 +371,7 @@ class OutStationsView: UIView {
         locationView.layer.cornerRadius = 8.0
         layoutDict["locationView"] = locationView
         locationView.translatesAutoresizingMaskIntoConstraints = false
-        viewSelectHomeAddress.addSubview(locationView)
+        viewLocalContent.addSubview(locationView)
         
         locationColor.layer.cornerRadius = 5
         locationColor.backgroundColor = .blue
@@ -546,7 +548,7 @@ class OutStationsView: UIView {
         
         viewDummyForHeight.translatesAutoresizingMaskIntoConstraints = false
         layoutDict["viewDummyForHeight"] = viewDummyForHeight
-        stackviewVehicleCategory_Brand.addArrangedSubview(viewDummyForHeight)
+        viewLocalContent.addSubview(viewDummyForHeight)
         
         
         viewBidBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -597,10 +599,12 @@ class OutStationsView: UIView {
         containerHgt.isActive = true
         
     
-        viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[lblLocalTitle]-20-[stackviewVehiclePickup_drop]-20-[viewSelectHomeDeliver]-20-[viewFuelType]-20-[stackviewVehicleCategory_Brand]|", options: [], metrics: nil, views: layoutDict))
+        viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[lblLocalTitle]-10-[locationView]-20-[stackviewVehiclePickup_drop]-20-[viewFuelType]-20-[stackviewVehicleCategory_Brand]-20-[viewSelectHomeDeliver][viewDummyForHeight]|", options: [], metrics: nil, views: layoutDict))
         viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblLocalTitle]-10-|", options: [], metrics: nil, views: layoutDict))
         
         viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[stackviewVehiclePickup_drop]-10-|", options: [], metrics: nil, views: layoutDict))
+        viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[locationView]-10-|", options: [], metrics: nil, views: layoutDict))
+        viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[viewDummyForHeight]-10-|", options: [], metrics: nil, views: layoutDict))
         
         viewVehicle_Pickup_Date.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblVehiclePickUpTitle]-10-[viewSelect_VechiclePickup(60)]|", options: [], metrics: nil, views: layoutDict))
         viewVehicle_Pickup_Date.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblVehiclePickUpTitle]|", options: [], metrics: nil, views: layoutDict))
@@ -663,10 +667,9 @@ class OutStationsView: UIView {
         
         
         
-        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblEnterHomeAddress]-10-[locationView]|", options: [], metrics: nil, views: layoutDict))
-        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblEnterHomeAddress]|", options: [], metrics: nil, views: layoutDict))
-        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[locationView]|", options: [], metrics: nil, views: layoutDict))
-
+//        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblEnterHomeAddress]|", options: [], metrics: nil, views: layoutDict))
+//        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblEnterHomeAddress]|", options: [], metrics: nil, views: layoutDict))
+        
         
         locationView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[locationColor(10)]-8-[lblLocation]-8-[btnEditLocation(25)]-8-|", options: [], metrics: nil, views: layoutDict))
         locationView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-5-[lblLocation]-5-|", options: [], metrics: nil, views: layoutDict))
@@ -707,7 +710,7 @@ class OutStationsView: UIView {
         viewEnter_ManufactureYear.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[txtManufactureYear]|", options: [], metrics: nil, views: layoutDict))
         viewEnter_ManufactureYear.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[txtManufactureYear]|", options: [], metrics: nil, views: layoutDict))
         
-        viewDummyForHeight.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        viewDummyForHeight.heightAnchor.constraint(equalToConstant: 70).isActive = true
 
         
         viewBidBtn.heightAnchor.constraint(equalToConstant: 60).isActive = true

@@ -28,6 +28,8 @@ class LocalCarView: UIView {
         
     var viewLocalContent = UIView()
     var lblLocalTitle = UILabel()
+    
+    
 
     var viewSelectPackage = UIView()
     var lblSelectPackageTitle = UILabel()
@@ -185,6 +187,36 @@ class LocalCarView: UIView {
         layoutDict["lblLocalTitle"] = lblLocalTitle
         viewLocalContent.addSubview(lblLocalTitle)
         
+        locationView.layer.cornerRadius = 8
+        locationView.backgroundColor = .white
+        locationView.layer.shadowOpacity = 0.6
+        locationView.layer.shadowOffset = CGSize(width:0, height: 2)
+        locationView.layer.shadowRadius = 5
+        locationView.layer.cornerRadius = 8.0
+        layoutDict["locationView"] = locationView
+        locationView.translatesAutoresizingMaskIntoConstraints = false
+        viewLocalContent.addSubview(locationView)
+        
+        locationColor.layer.cornerRadius = 5
+        locationColor.backgroundColor = .blue
+        layoutDict["locationColor"] = locationColor
+        locationColor.translatesAutoresizingMaskIntoConstraints = false
+        locationView.addSubview(locationColor)
+        
+        lblLocation.translatesAutoresizingMaskIntoConstraints = false
+        lblLocation.text = "17/40, Coimbatore, Tamil Nadu 641037, India"
+        lblLocation.numberOfLines = 0
+        lblLocation.textAlignment = .left
+        lblLocation.textColor = .black
+        lblLocation.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        layoutDict["lblLocation"] = lblLocation
+        locationView.addSubview(lblLocation)
+        
+        btnEditLocation.setImage(UIImage(named: "ic_note"), for: .normal)
+        layoutDict["btnEditLocation"] = btnEditLocation
+        btnEditLocation.translatesAutoresizingMaskIntoConstraints = false
+        locationView.addSubview(btnEditLocation)
+        
         viewSelectPackage.translatesAutoresizingMaskIntoConstraints = false
         layoutDict["viewSelectPackage"] = viewSelectPackage
         viewLocalContent.addSubview(viewSelectPackage)
@@ -222,123 +254,6 @@ class LocalCarView: UIView {
         lblSelectHomeDeliver.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         layoutDict["lblSelectHomeDeliver"] = lblSelectHomeDeliver
         viewSelectHomeDeliver.addSubview(lblSelectHomeDeliver)
-        
-        stackviewHomeDeliveryBtn_Address.translatesAutoresizingMaskIntoConstraints = false
-        stackviewHomeDeliveryBtn_Address.axis = .vertical
-        stackviewHomeDeliveryBtn_Address.alignment = .fill
-        stackviewHomeDeliveryBtn_Address.spacing = 20
-        layoutDict["stackviewHomeDeliveryBtn_Address"] = stackviewHomeDeliveryBtn_Address
-        viewSelectHomeDeliver.addSubview(stackviewHomeDeliveryBtn_Address)
-
-        viewBackground_SelectHomeDeliverBtn.translatesAutoresizingMaskIntoConstraints = false
-        viewBackground_SelectHomeDeliverBtn.layer.shadowColor = UIColor.black.cgColor
-        viewBackground_SelectHomeDeliverBtn.layer.shadowOpacity = 0.6
-        viewBackground_SelectHomeDeliverBtn.layer.shadowOffset = CGSize(width:0, height: 2)
-        viewBackground_SelectHomeDeliverBtn.layer.shadowRadius = 5
-        viewBackground_SelectHomeDeliverBtn.layer.cornerRadius = 8.0
-        viewBackground_SelectHomeDeliverBtn.backgroundColor = .white
-        layoutDict["viewBackground_SelectHomeDeliverBtn"] = viewBackground_SelectHomeDeliverBtn
-        stackviewHomeDeliveryBtn_Address.addArrangedSubview(viewBackground_SelectHomeDeliverBtn)
-        
-        stackviewSelectHome_GarageBtn.translatesAutoresizingMaskIntoConstraints = false
-        stackviewSelectHome_GarageBtn.axis = .horizontal
-        stackviewSelectHome_GarageBtn.alignment = .fill
-        stackviewSelectHome_GarageBtn.distribution = .fillEqually
-        stackviewSelectHome_GarageBtn.spacing = 0
-        stackviewSelectHome_GarageBtn.layer.cornerRadius = 8.0
-
-        stackviewSelectHome_GarageBtn.backgroundColor = .white
-        layoutDict["stackviewSelectHome_GarageBtn"] = stackviewSelectHome_GarageBtn
-        viewBackground_SelectHomeDeliverBtn.addSubview(stackviewSelectHome_GarageBtn)
-        
-        viewHomeDeliverybtn.translatesAutoresizingMaskIntoConstraints = false
-        layoutDict["viewHomeDeliverybtn"] = viewHomeDeliverybtn
-        stackviewSelectHome_GarageBtn.addArrangedSubview(viewHomeDeliverybtn)
-        
-        imgvwHomeDeliveryCar.translatesAutoresizingMaskIntoConstraints = false
-        imgvwHomeDeliveryCar.image = UIImage(named: "homeServiceFill")
-        imgvwHomeDeliveryCar.contentMode = .scaleAspectFit
-        imgvwHomeDeliveryCar.layer.masksToBounds = true
-        layoutDict["imgvwHomeDeliveryCar"] = imgvwHomeDeliveryCar
-        viewHomeDeliverybtn.addSubview(imgvwHomeDeliveryCar)
-        
-        lblHomeDeliveryCar.translatesAutoresizingMaskIntoConstraints = false
-        lblHomeDeliveryCar.text = "Home Service"
-        lblHomeDeliveryCar.textAlignment = .center
-        lblHomeDeliveryCar.textColor = .black
-        lblHomeDeliveryCar.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        layoutDict["lblHomeDeliveryCar"] = lblHomeDeliveryCar
-        viewHomeDeliverybtn.addSubview(lblHomeDeliveryCar)
-        
-        btnHomeDeliveryCar.translatesAutoresizingMaskIntoConstraints = false
-        layoutDict["btnHomeDeliveryCar"] = btnHomeDeliveryCar
-        viewHomeDeliverybtn.addSubview(btnHomeDeliveryCar)
-
-        viewGaragePickupbtn.translatesAutoresizingMaskIntoConstraints = false
-        layoutDict["viewGaragePickupbtn"] = viewGaragePickupbtn
-        stackviewSelectHome_GarageBtn.addArrangedSubview(viewGaragePickupbtn)
-        
-        imgvwGaragePickupCar.translatesAutoresizingMaskIntoConstraints = false
-        imgvwGaragePickupCar.image = UIImage(named: "garagePickup")
-        imgvwGaragePickupCar.contentMode = .scaleAspectFit
-        imgvwGaragePickupCar.layer.masksToBounds = true
-        layoutDict["imgvwGaragePickupCar"] = imgvwGaragePickupCar
-        viewGaragePickupbtn.addSubview(imgvwGaragePickupCar)
-        
-        lblGaragePickupCar.translatesAutoresizingMaskIntoConstraints = false
-        lblGaragePickupCar.text = "Garage Pickup"
-        lblGaragePickupCar.textAlignment = .center
-        lblGaragePickupCar.textColor = .black
-        lblGaragePickupCar.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        layoutDict["lblGaragePickupCar"] = lblGaragePickupCar
-        viewGaragePickupbtn.addSubview(lblGaragePickupCar)
-        
-        btnGaragePickupCar.translatesAutoresizingMaskIntoConstraints = false
-        layoutDict["btnGaragePickupCar"] = btnGaragePickupCar
-        viewGaragePickupbtn.addSubview(btnGaragePickupCar)
-        
-        viewSelectHomeAddress.translatesAutoresizingMaskIntoConstraints = false
-        viewSelectHomeAddress.backgroundColor = .white
-        layoutDict["viewSelectHomeAddress"] = viewSelectHomeAddress
-        stackviewHomeDeliveryBtn_Address.addArrangedSubview(viewSelectHomeAddress)
-        
-        lblEnterHomeAddress.translatesAutoresizingMaskIntoConstraints = false
-        lblEnterHomeAddress.text = "Enter Home Address :"
-        lblEnterHomeAddress.textAlignment = .left
-        lblEnterHomeAddress.textColor = .black
-        lblEnterHomeAddress.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        layoutDict["lblEnterHomeAddress"] = lblEnterHomeAddress
-        viewSelectHomeAddress.addSubview(lblEnterHomeAddress)
-        
-        locationView.layer.cornerRadius = 8
-        locationView.backgroundColor = .white
-        locationView.layer.shadowOpacity = 0.6
-        locationView.layer.shadowOffset = CGSize(width:0, height: 2)
-        locationView.layer.shadowRadius = 5
-        locationView.layer.cornerRadius = 8.0
-        layoutDict["locationView"] = locationView
-        locationView.translatesAutoresizingMaskIntoConstraints = false
-        viewSelectHomeAddress.addSubview(locationView)
-        
-        locationColor.layer.cornerRadius = 5
-        locationColor.backgroundColor = .blue
-        layoutDict["locationColor"] = locationColor
-        locationColor.translatesAutoresizingMaskIntoConstraints = false
-        locationView.addSubview(locationColor)
-        
-        lblLocation.translatesAutoresizingMaskIntoConstraints = false
-        lblLocation.text = "17/40, Coimbatore, Tamil Nadu 641037, India"
-        lblLocation.numberOfLines = 0
-        lblLocation.textAlignment = .left
-        lblLocation.textColor = .black
-        lblLocation.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        layoutDict["lblLocation"] = lblLocation
-        locationView.addSubview(lblLocation)
-        
-        btnEditLocation.setImage(UIImage(named: "ic_note"), for: .normal)
-        layoutDict["btnEditLocation"] = btnEditLocation
-        btnEditLocation.translatesAutoresizingMaskIntoConstraints = false
-        locationView.addSubview(btnEditLocation)
         
         
         viewFuelType.translatesAutoresizingMaskIntoConstraints = false
@@ -493,10 +408,98 @@ class LocalCarView: UIView {
         layoutDict["txtManufactureYear"] = txtManufactureYear
         viewEnter_ManufactureYear.addSubview(txtManufactureYear)
         
+        stackviewHomeDeliveryBtn_Address.translatesAutoresizingMaskIntoConstraints = false
+        stackviewHomeDeliveryBtn_Address.axis = .vertical
+        stackviewHomeDeliveryBtn_Address.alignment = .fill
+        stackviewHomeDeliveryBtn_Address.spacing = 20
+        layoutDict["stackviewHomeDeliveryBtn_Address"] = stackviewHomeDeliveryBtn_Address
+        viewSelectHomeDeliver.addSubview(stackviewHomeDeliveryBtn_Address)
+
+        viewBackground_SelectHomeDeliverBtn.translatesAutoresizingMaskIntoConstraints = false
+        viewBackground_SelectHomeDeliverBtn.layer.shadowColor = UIColor.black.cgColor
+        viewBackground_SelectHomeDeliverBtn.layer.shadowOpacity = 0.6
+        viewBackground_SelectHomeDeliverBtn.layer.shadowOffset = CGSize(width:0, height: 2)
+        viewBackground_SelectHomeDeliverBtn.layer.shadowRadius = 5
+        viewBackground_SelectHomeDeliverBtn.layer.cornerRadius = 8.0
+        viewBackground_SelectHomeDeliverBtn.backgroundColor = .white
+        layoutDict["viewBackground_SelectHomeDeliverBtn"] = viewBackground_SelectHomeDeliverBtn
+        stackviewHomeDeliveryBtn_Address.addArrangedSubview(viewBackground_SelectHomeDeliverBtn)
+        
+        stackviewSelectHome_GarageBtn.translatesAutoresizingMaskIntoConstraints = false
+        stackviewSelectHome_GarageBtn.axis = .horizontal
+        stackviewSelectHome_GarageBtn.alignment = .fill
+        stackviewSelectHome_GarageBtn.distribution = .fillEqually
+        stackviewSelectHome_GarageBtn.spacing = 0
+        stackviewSelectHome_GarageBtn.layer.cornerRadius = 8.0
+
+        stackviewSelectHome_GarageBtn.backgroundColor = .white
+        layoutDict["stackviewSelectHome_GarageBtn"] = stackviewSelectHome_GarageBtn
+        viewBackground_SelectHomeDeliverBtn.addSubview(stackviewSelectHome_GarageBtn)
+        
+        viewHomeDeliverybtn.translatesAutoresizingMaskIntoConstraints = false
+        layoutDict["viewHomeDeliverybtn"] = viewHomeDeliverybtn
+        stackviewSelectHome_GarageBtn.addArrangedSubview(viewHomeDeliverybtn)
+        
+        imgvwHomeDeliveryCar.translatesAutoresizingMaskIntoConstraints = false
+        imgvwHomeDeliveryCar.image = UIImage(named: "homeServiceFill")
+        imgvwHomeDeliveryCar.contentMode = .scaleAspectFit
+        imgvwHomeDeliveryCar.layer.masksToBounds = true
+        layoutDict["imgvwHomeDeliveryCar"] = imgvwHomeDeliveryCar
+        viewHomeDeliverybtn.addSubview(imgvwHomeDeliveryCar)
+        
+        lblHomeDeliveryCar.translatesAutoresizingMaskIntoConstraints = false
+        lblHomeDeliveryCar.text = "Home Service"
+        lblHomeDeliveryCar.textAlignment = .center
+        lblHomeDeliveryCar.textColor = .black
+        lblHomeDeliveryCar.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        layoutDict["lblHomeDeliveryCar"] = lblHomeDeliveryCar
+        viewHomeDeliverybtn.addSubview(lblHomeDeliveryCar)
+        
+        btnHomeDeliveryCar.translatesAutoresizingMaskIntoConstraints = false
+        layoutDict["btnHomeDeliveryCar"] = btnHomeDeliveryCar
+        viewHomeDeliverybtn.addSubview(btnHomeDeliveryCar)
+
+        viewGaragePickupbtn.translatesAutoresizingMaskIntoConstraints = false
+        layoutDict["viewGaragePickupbtn"] = viewGaragePickupbtn
+        stackviewSelectHome_GarageBtn.addArrangedSubview(viewGaragePickupbtn)
+        
+        imgvwGaragePickupCar.translatesAutoresizingMaskIntoConstraints = false
+        imgvwGaragePickupCar.image = UIImage(named: "garagePickup")
+        imgvwGaragePickupCar.contentMode = .scaleAspectFit
+        imgvwGaragePickupCar.layer.masksToBounds = true
+        layoutDict["imgvwGaragePickupCar"] = imgvwGaragePickupCar
+        viewGaragePickupbtn.addSubview(imgvwGaragePickupCar)
+        
+        lblGaragePickupCar.translatesAutoresizingMaskIntoConstraints = false
+        lblGaragePickupCar.text = "Garage Pickup"
+        lblGaragePickupCar.textAlignment = .center
+        lblGaragePickupCar.textColor = .black
+        lblGaragePickupCar.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        layoutDict["lblGaragePickupCar"] = lblGaragePickupCar
+        viewGaragePickupbtn.addSubview(lblGaragePickupCar)
+        
+        btnGaragePickupCar.translatesAutoresizingMaskIntoConstraints = false
+        layoutDict["btnGaragePickupCar"] = btnGaragePickupCar
+        viewGaragePickupbtn.addSubview(btnGaragePickupCar)
+        
+        viewSelectHomeAddress.translatesAutoresizingMaskIntoConstraints = false
+        viewSelectHomeAddress.isHidden = true
+        viewSelectHomeAddress.backgroundColor = .white
+        layoutDict["viewSelectHomeAddress"] = viewSelectHomeAddress
+        stackviewHomeDeliveryBtn_Address.addArrangedSubview(viewSelectHomeAddress)
+        
+        lblEnterHomeAddress.translatesAutoresizingMaskIntoConstraints = false
+        lblEnterHomeAddress.text = "Enter Home Address :"
+        lblEnterHomeAddress.textAlignment = .left
+        lblEnterHomeAddress.textColor = .black
+        lblEnterHomeAddress.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        layoutDict["lblEnterHomeAddress"] = lblEnterHomeAddress
+        viewSelectHomeAddress.addSubview(lblEnterHomeAddress)
+        
         
         viewDummyForHeight.translatesAutoresizingMaskIntoConstraints = false
         layoutDict["viewDummyForHeight"] = viewDummyForHeight
-        stackviewVehicleCategory_Brand.addArrangedSubview(viewDummyForHeight)
+        viewLocalContent.addSubview(viewDummyForHeight)
         
         
         viewBidBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -545,7 +548,7 @@ class LocalCarView: UIView {
         containerHgt.priority = .defaultLow
         containerHgt.isActive = true
     
-        viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[lblLocalTitle]-20-[viewSelectPackage]-20-[viewSelectHomeDeliver]-20-[viewFuelType]-20-[stackviewVehicleCategory_Brand]|", options: [], metrics: nil, views: layoutDict))
+        viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[lblLocalTitle]-10-[locationView]-20-[viewSelectPackage]-20-[viewFuelType]-20-[stackviewVehicleCategory_Brand]-20-[viewSelectHomeDeliver][viewDummyForHeight(70)]|", options: [], metrics: nil, views: layoutDict))
         viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[lblLocalTitle]-10-|", options: [], metrics: nil, views: layoutDict))
         
         viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[viewSelectPackage]-10-|", options: [], metrics: nil, views: layoutDict))
@@ -555,6 +558,9 @@ class LocalCarView: UIView {
         viewSelectPackage.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[packageCollectionvw]|", options: [], metrics: nil, views: layoutDict))
         
         viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[viewSelectHomeDeliver]-10-|", options: [], metrics: nil, views: layoutDict))
+        
+        viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[locationView]-10-|", options: [], metrics: nil, views: layoutDict))
+        viewLocalContent.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[viewDummyForHeight]-10-|", options: [], metrics: nil, views: layoutDict))
         
         
         viewSelectHomeDeliver.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblSelectHomeDeliver]-10-[stackviewHomeDeliveryBtn_Address]|", options: [], metrics: nil, views: layoutDict))
@@ -587,9 +593,9 @@ class LocalCarView: UIView {
         
         
         
-        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblEnterHomeAddress]-10-[locationView]|", options: [], metrics: nil, views: layoutDict))
-        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblEnterHomeAddress]|", options: [], metrics: nil, views: layoutDict))
-        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[locationView]|", options: [], metrics: nil, views: layoutDict))
+//        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lblEnterHomeAddress]|", options: [], metrics: nil, views: layoutDict))
+//        viewSelectHomeAddress.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lblEnterHomeAddress]|", options: [], metrics: nil, views: layoutDict))
+        
 
         
         locationView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-8-[locationColor(10)]-8-[lblLocation]-8-[btnEditLocation(25)]-8-|", options: [], metrics: nil, views: layoutDict))
