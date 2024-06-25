@@ -119,7 +119,7 @@ class viewSelfLocal: UIView {
         stackviewDetails.alignment = .fill
         stackviewDetails.spacing = 10
         layoutDict["stackviewDetails"] = stackviewDetails
-        viewDriverDetailsContentBase.addArrangedSubview(stackviewDetails)
+        viewdetailsbase.addSubview(stackviewDetails)
         
         //----Service Types
         viewServiceTypesDetails.translatesAutoresizingMaskIntoConstraints = false
@@ -412,6 +412,9 @@ class viewSelfLocal: UIView {
         
         
         //----Hidden Details
+        
+        viewdetailsbase.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[stackviewDetails]|", options: [], metrics: nil, views: layoutDict))
+        viewdetailsbase.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[stackviewDetails]|", options: [], metrics: nil, views: layoutDict))
         
         //----ServiceTypes
         viewServiceTypesDetails.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[viewServiceTypesDetailsTitle]|", options: [], metrics: nil, views: layoutDict))
