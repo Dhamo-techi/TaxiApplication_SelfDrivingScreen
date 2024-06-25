@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let WindowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: WindowScene.coordinateSpace.bounds)
         window?.windowScene = WindowScene
-        let vc = homeVC()
+        let vc = SelfLocalVC()
         let navigationController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
@@ -49,6 +49,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+//    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+//        if let url = URLContexts.first?.url {
+//            print(url)
+//            
+//            let urlstring = url.absoluteString
+//            
+//            let component = urlstring.components(separatedBy: "=")
+//        
+//            if component.count > 1, let product = component.last {
+//                print(product)
+//                
+//            }
+//        }
+//    }
 
 
 }

@@ -18,6 +18,9 @@
 		053BEF8F2C196386000FA747 /* OutStationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053BEF8E2C196386000FA747 /* OutStationsView.swift */; };
 		053BEF972C196486000FA747 /* OutstationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053BEF962C196486000FA747 /* OutstationsVC.swift */; };
 		053BEFA42C1981DA000FA747 /* RJKPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053BEFA32C1981DA000FA747 /* RJKPickerTextField.swift */; };
+		053C254B2C2AAE8500E4BED3 /* viewSelfLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C254A2C2AAE8500E4BED3 /* viewSelfLocal.swift */; };
+		053C25532C2AAE9D00E4BED3 /* SelfLocalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053C25522C2AAE9D00E4BED3 /* SelfLocalVC.swift */; };
+		05433E372C259E7100AA9F19 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05433E362C259E7100AA9F19 /* DeepLink.swift */; };
 		0588664C2C170DAE00979931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588664B2C170DAE00979931 /* AppDelegate.swift */; };
 		0588664E2C170DAE00979931 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0588664D2C170DAE00979931 /* SceneDelegate.swift */; };
 		058866552C170DBB00979931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058866542C170DBB00979931 /* Assets.xcassets */; };
@@ -60,6 +63,10 @@
 		053BEF8E2C196386000FA747 /* OutStationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutStationsView.swift; sourceTree = "<group>"; };
 		053BEF962C196486000FA747 /* OutstationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutstationsVC.swift; sourceTree = "<group>"; };
 		053BEFA32C1981DA000FA747 /* RJKPickerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJKPickerTextField.swift; sourceTree = "<group>"; };
+		053C254A2C2AAE8500E4BED3 /* viewSelfLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewSelfLocal.swift; sourceTree = "<group>"; };
+		053C25522C2AAE9D00E4BED3 /* SelfLocalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfLocalVC.swift; sourceTree = "<group>"; };
+		05433E362C259E7100AA9F19 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
+		05703FBD2C292FDA0019A50E /* TaxiApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaxiApplication.entitlements; sourceTree = "<group>"; };
 		058866482C170DAE00979931 /* TaxiApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0588664B2C170DAE00979931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0588664D2C170DAE00979931 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +188,31 @@
 			path = OutStations;
 			sourceTree = "<group>";
 		};
+		053C25472C2AADC700E4BED3 /* ServiceStatusEdit */ = {
+			isa = PBXGroup;
+			children = (
+				053C25482C2AADE800E4BED3 /* view */,
+				053C25492C2AADF000E4BED3 /* controller */,
+			);
+			path = ServiceStatusEdit;
+			sourceTree = "<group>";
+		};
+		053C25482C2AADE800E4BED3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				053C254A2C2AAE8500E4BED3 /* viewSelfLocal.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		053C25492C2AADF000E4BED3 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				053C25522C2AAE9D00E4BED3 /* SelfLocalVC.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		0588663F2C170DAD00979931 = {
 			isa = PBXGroup;
 			children = (
@@ -204,9 +236,12 @@
 		0588664A2C170DAE00979931 /* TaxiApplication */ = {
 			isa = PBXGroup;
 			children = (
+				05703FBD2C292FDA0019A50E /* TaxiApplication.entitlements */,
 				0588664B2C170DAE00979931 /* AppDelegate.swift */,
 				0588664D2C170DAE00979931 /* SceneDelegate.swift */,
+				05433E362C259E7100AA9F19 /* DeepLink.swift */,
 				053BEFA32C1981DA000FA747 /* RJKPickerTextField.swift */,
+				053C25472C2AADC700E4BED3 /* ServiceStatusEdit */,
 				053930132C1FFA3D0062F7A3 /* Vehicle Information */,
 				0588668A2C170E7B00979931 /* View */,
 				058866842C170E4300979931 /* Controller */,
@@ -419,11 +454,14 @@
 				058866972C170EB400979931 /* homeVC.swift in Sources */,
 				053BEF972C196486000FA747 /* OutstationsVC.swift in Sources */,
 				05B3D93F2C1AB451004A8041 /* SelfDriving_infoVC.swift in Sources */,
+				053C25532C2AAE9D00E4BED3 /* SelfLocalVC.swift in Sources */,
 				053930172C1FFA7B0062F7A3 /* VehicleInformationView.swift in Sources */,
 				053BEFA42C1981DA000FA747 /* RJKPickerTextField.swift in Sources */,
 				05366F112C214887003700BF /* CarTypeCell.swift in Sources */,
+				05433E372C259E7100AA9F19 /* DeepLink.swift in Sources */,
 				053BEF7D2C182EDE000FA747 /* VehicleCategoryCollectionViewCell.swift in Sources */,
 				0588668C2C170E9800979931 /* HomeView.swift in Sources */,
+				053C254B2C2AAE8500E4BED3 /* viewSelfLocal.swift in Sources */,
 				053BEF8F2C196386000FA747 /* OutStationsView.swift in Sources */,
 				053BEF722C171FB2000FA747 /* localCarVC.swift in Sources */,
 				0539302A2C2036C90062F7A3 /* AmbulanceCell.swift in Sources */,
@@ -596,15 +634,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = TaxiApplication/TaxiApplication.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MES9DQLP42;
 				INFOPLIST_FILE = TaxiApplication/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nplus.TaxiApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nplus.rodauser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = nplus.rodauser.development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -615,15 +657,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = TaxiApplication/TaxiApplication.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MES9DQLP42;
 				INFOPLIST_FILE = TaxiApplication/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Nplus.TaxiApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nplus.rodauser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = nplus.rodauser.development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
